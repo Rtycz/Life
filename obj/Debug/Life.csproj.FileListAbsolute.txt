@@ -1,0 +1,10 @@
+C:\Developing\C Sharp\Life\bin\Debug\Life.exe.config
+C:\Developing\C Sharp\Life\bin\Debug\Life.exe
+C:\Developing\C Sharp\Life\bin\Debug\Life.pdb
+C:\Developing\C Sharp\Life\obj\Debug\Life.csprojAssemblyReference.cache
+C:\Developing\C Sharp\Life\obj\Debug\Life.Properties.Resources.resources
+C:\Developing\C Sharp\Life\obj\Debug\Life.csproj.GenerateResource.cache
+C:\Developing\C Sharp\Life\obj\Debug\Life.csproj.CoreCompileInputs.cache
+C:\Developing\C Sharp\Life\obj\Debug\Life.exe
+C:\Developing\C Sharp\Life\obj\Debug\Life.pdb
+C:\Developing\C Sharp\Life\obj\Debug\Life.Form1.resources
