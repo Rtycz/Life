@@ -14,7 +14,7 @@ namespace Life
         private int y;
         private int r = 20;
 
-        private Brush brr = Brushes.DarkOliveGreen;
+        
 
         public Meal()
         {
@@ -31,11 +31,21 @@ namespace Life
         public void setY(int yy) { y = yy - r / 2; }
         public void setState(int st) { state = st; }
 
-        public void setBrush(Brush br) { brr = br; }
+        //public void setBrush(Brush br) { brr = br; }
 
         public void Draw(Graphics g)
         {
-            g.FillEllipse(brr, x, y, r, r);
+            if (state == 1)
+            {
+                Brush brr = Brushes.DarkOliveGreen;
+                g.FillEllipse(brr, x, y, r, r);
+            }
+            else
+            {
+                Brush brr = Brushes.Black;
+                g.FillEllipse(brr, x, y, r, r);
+            }
+            
         }
     }
 }
