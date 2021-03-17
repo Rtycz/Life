@@ -14,25 +14,22 @@ namespace Life
 {
     public partial class Form1 : Form
     {
-        int Age = 20;
+        int Age = 50;
         int Era = -1;
-
         
-        List<CellMan> CellMan = new List<CellMan>();
         List<CellWoman> CellWoman = new List<CellWoman>();
 
-        MealEmitter Meal = new MealEmitter();
+        MealEmitter     MealEmitter         = new   MealEmitter();
+        CellManEmitter  CellManEmitter      = new   CellManEmitter();
 
-        Random rand = new Random();
+        Random          rand                = new   Random();
 
         public Form1()
         {
             InitializeComponent();
-            CellMan.Add(new CellMan());
+            //CellMan.Add(new CellMan());
             CellWoman.Add(new CellWoman());
         }
-
-        
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
@@ -42,36 +39,38 @@ namespace Life
             Graphics g = CreateGraphics();
             Font fnt = new Font("Coyrier", 20);
 
-            if (Age >= 20)
+            //Каждые 50 лет накидывается 10 еды на поле
+            if (Age >= 50)
             {
+                CellManEmitter.Add(CellManEmitter.getCell(0));
+
                 Age = 0;
-                Meal.Add();
+
+                MealEmitter.Add();
             }
 
-            Meal.CheckIntersectionM(CellMan[0]);
-            Meal.CheckIntersectionW(CellWoman[0]);
+            //Проверяется пересечение каждой из мужских клеток с едой
+            foreach (CellMan cell in CellManEmitter.getCellList())
+            {
+                MealEmitter.CheckIntersectionM(cell);
+            }
 
-            Meal.Render(g);
+            MealEmitter.CheckIntersectionW(CellWoman[0]);
 
-            CellMan[0].Draw(g);
-            
+            //Отрисовка еды
+            MealEmitter.Render(g);
+
+            //Отрисовка мужских клеток
+            CellManEmitter.Render(g);
+
             CellWoman[0].Draw(g);
-
-            
-
-            
-
 
             int dirx = rand.Next(-7, 8);
             int diry = rand.Next(-7, 8);
 
-            CellMan[0].Move(dirx, diry);
-
-            dirx = rand.Next(-7, 8);
-            diry = rand.Next(-7, 8);
-
             CellWoman[0].Move(dirx, diry);
 
+            //Отрисовка эры
             g.DrawString(Era.ToString(), fnt, Brushes.Black, 900, 630);
         }
 

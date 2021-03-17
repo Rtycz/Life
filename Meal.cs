@@ -42,8 +42,9 @@ namespace Life
             }
             else
             {
-                Brush brr = Brushes.Black;
-                g.FillEllipse(brr, x, y, r, r);
+                
+                //Brush brr = Brushes.Black;
+                //g.FillEllipse(brr, x, y, r, r);
             }
             
         }

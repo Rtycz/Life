@@ -15,6 +15,7 @@ namespace Life
         private int hp; //хп от еды
         private int cd; //cooldown размножения
         private int era;//эра не больше 500
+        private int state;
 
         public Cell()
         {
@@ -29,6 +30,7 @@ namespace Life
         public int getHp() { return (hp); }
         public int getCd() { return (cd); }
         public int getEra() { return (era); }
+        public int getState() { return (state); }
 
         public void setX(int xx) { x = xx - r / 2; }
         public void setY(int yy) { y = yy - r / 2; }
@@ -36,6 +38,7 @@ namespace Life
         public void setHp(int hhp) { hp = hhp; }
         public void setCd(int ccd) { cd = ccd; }
         public void setEra(int eera) { era = eera; }
+        public void setState(int sstate) { state = sstate; }
 
         public abstract void Draw(Graphics g);
 
@@ -78,6 +81,7 @@ namespace Life
                 hp = 100;
             }
         }
+        
         
     }
 }

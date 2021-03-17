@@ -9,12 +9,12 @@ namespace Life
 {
     class CellWoman : Cell
     {
-        private int state = 0;
         public CellWoman()
         {
             this.setX(535);
             this.setY(385);
             this.setR(30);
+            this.setState(2);
         }
 
         public override void Draw(Graphics g)

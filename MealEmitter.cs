@@ -9,13 +9,20 @@ namespace Life
 {
     class MealEmitter
     {
-        private int CountMeal = 0;
+        private int     CountMeal   = 0;
+        private Random  rand        = new Random();
 
-        List<Meal> Meal = new List<Meal>();
+        List<Meal>      Meal;
 
-        Random rand = new Random();
 
-        public void Add()
+        //Конструктор
+        public MealEmitter() 
+        {
+            Meal = new List<Meal>();
+        }
+
+        //Добавить 10 единиц еды на игровое поле
+        public void Add() 
         {
             CountMeal += 10;
             for (int i = CountMeal - 10; i < CountMeal; i++)
@@ -27,7 +34,8 @@ namespace Life
             }
         }
 
-        public void Render(Graphics g)
+        //Отрисовать всю еду
+        public void Render(Graphics g) 
         {
             foreach (Meal meal in Meal)
             {
@@ -35,7 +43,8 @@ namespace Life
             }
         }
 
-        private double Dist(Cell x, Meal y)
+        //Возвращает дистанцию от клетки x до еды у
+        private double Dist(Cell x, Meal y) 
         {
             int cellx = x.getX();
             int celly = x.getY();
@@ -47,6 +56,7 @@ namespace Life
             return (dist);
         }
 
+        //Проверяет еду на съеденность клеткой cell, если игра съедена то ставит на нее статус 0
         public void CheckIntersectionM(CellMan cell)
         {
             int x = cell.getX();
@@ -69,6 +79,7 @@ namespace Life
             }
         }
 
+        //Проверяет еду на съеденность клеткой cell, если игра съедена то ставит на нее статус 0
         public void CheckIntersectionW(CellWoman cell)
         {
             int x = cell.getX();
@@ -89,7 +100,7 @@ namespace Life
                     meal.setState(0);
                 }
             }
-        }
+        }           
 
     }
 }

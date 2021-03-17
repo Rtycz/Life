@@ -9,17 +9,36 @@ namespace Life
 {
     class CellMan : Cell
     {
-        private int state = 1;
         public CellMan()
         {
             this.setX(500);
             this.setY(350);
             this.setR(30);
+            this.setState(1);
         }
 
         public override void Draw(Graphics g)
         {
-            g.FillEllipse(Brushes.Blue, this.getX() - getR() / 2, this.getY() - getR() / 2, this.getR(), this.getR());
+            if (this.getState() != 0)
+            {
+                g.FillEllipse(Brushes.Blue, this.getX() - getR() / 2, this.getY() - getR() / 2, this.getR(), this.getR());
+            }
+            else
+            {
+                g.FillEllipse(Brushes.Black, this.getX() - getR() / 2, this.getY() - getR() / 2, this.getR(), this.getR());
+            }
+
+            
+        }
+
+        public CellMan AddChild()
+        {
+            CellMan newcell = new CellMan();
+
+            newcell.setX(this.getX() + 15);
+            newcell.setY(this.getY() + 15);
+
+            return (newcell);
         }
     }
 }

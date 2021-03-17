@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="Cell.cs" />
     <Compile Include="CellMan.cs" />
+    <Compile Include="CellManEmitter.cs" />
     <Compile Include="CellWoman.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
