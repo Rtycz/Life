@@ -9,6 +9,7 @@ namespace Life
 {
     class CellMan : Cell
     {
+        //Конструктор класса
         public CellMan()
         {
             this.setX(500);
@@ -17,20 +18,20 @@ namespace Life
             this.setState(1);
         }
 
+        //Отрисовка мужской клетки
         public override void Draw(Graphics g)
         {
-            if (this.getState() != 0)
+            if (this.getState() != 0)       //Отрисовка живой клетки
             {
                 g.FillEllipse(Brushes.Blue, this.getX() - getR() / 2, this.getY() - getR() / 2, this.getR(), this.getR());
             }
-            else
+            else                            //Отрисовка Мертвой клетки клетки
             {
                 g.FillEllipse(Brushes.Black, this.getX() - getR() / 2, this.getY() - getR() / 2, this.getR(), this.getR());
             }
-
-            
         }
 
+        //Функция возвращает новую мужскую клетку в координате (+15, +15) от мужской клетки-родителя
         public CellMan AddChild()
         {
             CellMan newcell = new CellMan();

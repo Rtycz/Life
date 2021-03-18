@@ -9,6 +9,7 @@ namespace Life
 {
     class CellWoman : Cell
     {
+        //Конструктор класса
         public CellWoman()
         {
             this.setX(535);
@@ -17,18 +18,20 @@ namespace Life
             this.setState(2);
         }
 
+        //Отрисовка женской клетки 
         public override void Draw(Graphics g)
         {
-            if (this.getState() != 0)
+            if (this.getState() != 0)       //отрисовка живой клетки
             {
                 g.FillEllipse(Brushes.Red, this.getX() - getR() / 2, this.getY() - getR() / 2, this.getR(), this.getR());
             }
-            else
+            else                            //отрисовка мертвой клетки
             {
                 g.FillEllipse(Brushes.Black, this.getX() - getR() / 2, this.getY() - getR() / 2, this.getR(), this.getR());
             }
         }
 
+        //Функция возвращает новую женскую клетку в координате (-15, -15) от женской клетки-родителя
         public CellWoman AddChild()
         {
             CellWoman newcell = new CellWoman();

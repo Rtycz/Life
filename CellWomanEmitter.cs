@@ -13,28 +13,34 @@ namespace Life
 
         private List<CellWoman> CellWoman;
         Random rand = new Random();
-        public CellWomanEmitter()                     //Конструктор
+
+        //Конструктор класса
+        public CellWomanEmitter()                     
         {
             CellWoman = new List<CellWoman>();
             CellWoman.Add(new CellWoman());
         }
 
-        public CellWoman getCell(int i)               //Возвращает элемент с порядковым номером i
+        //Возвращает элемент с порядковым номером i
+        public CellWoman getCell(int i)               
         {
             return (CellWoman[i]);
         }
 
-        public List<CellWoman> getCellList()          //Возвращает список клеток
+        //Возвращает список клеток
+        public List<CellWoman> getCellList()          
         {
             return (CellWoman);
         }
 
-        public void Add(CellWoman cell)               //Добавить ребенка мужского пола в координате (+15, +15) от родителя-аргумента
+        //Добавить ребенка женского пола в список рядом с клеткой-аргументом
+        public void Add(CellWoman cell)               
         {
             CellWoman.Add(cell.AddChild());
         }
 
-        public void Render(Graphics g)              //Отрисовывает все клетки мужского пола
+        //Отрисовывает все клетки женского пола
+        public void Render(Graphics g)              
         {
             foreach (CellWoman cell in CellWoman)
             {

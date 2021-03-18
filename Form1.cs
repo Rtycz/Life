@@ -14,22 +14,20 @@ namespace Life
 {
     public partial class Form1 : Form
     {
-        int Age = 50;
-        int Era = -1;
+        int Age = 50;       //Эра - счетчик
+        int Era = -1;       //Глобальная эра
         
         //List<CellWoman> CellWoman = new List<CellWoman>();
 
         MealEmitter         MealEmitter         = new MealEmitter();
-        CellManEmitter      CellManEmitter      = new CellManEmitter();
-        CellWomanEmitter    CellWomanEmitter    = new CellWomanEmitter();
-
-        Random              rand                = new Random();
+        CellManEmitter      CellManEmitter      = new CellManEmitter();     //Экземпляр класса CellWomanEmitter 
+        //создается не здесь чтобы не было проблем с передвижением элементов двух разных эмиттеров 
+        CellWomanEmitter    CellWomanEmitter    ;
 
         public Form1()
         {
             InitializeComponent();
-            //CellMan.Add(new CellMan());
-            //CellWoman.Add(new CellWoman());
+            CellWomanEmitter = new CellWomanEmitter();
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -44,21 +42,11 @@ namespace Life
             if (Age >= 50)
             {
                 CellManEmitter.Add(CellManEmitter.getCell(0));
-                //CellWomanEmitter.Add(CellWomanEmitter.getCell(0));
+                CellWomanEmitter.Add(CellWomanEmitter.getCell(0));
 
                 Age = 0;
 
                 MealEmitter.Add();
-            }
-
-            if (Age == 20)
-            {
-                //CellManEmitter.Add(CellManEmitter.getCell(0));
-                CellWomanEmitter.Add(CellWomanEmitter.getCell(0));
-
-                //Age = 0;
-
-                //MealEmitter.Add();
             }
 
             //Проверяется пересечение каждой из мужских клеток с едой
@@ -73,9 +61,6 @@ namespace Life
                 MealEmitter.CheckIntersectionW(cell);
             }
 
-
-            //MealEmitter.CheckIntersectionW(CellWoman[0]);
-
             //Отрисовка еды
             MealEmitter.Render(g);
 
@@ -85,14 +70,7 @@ namespace Life
             //Отрисовка женских клеток
             CellWomanEmitter.Render(g);
 
-            //CellWoman[0].Draw(g);
-
-            int dirx = rand.Next(-7, 8);
-            int diry = rand.Next(-7, 8);
-
-            //CellWoman[0].Move(dirx, diry);
-
-            //Отрисовка эры
+            //Отрисовка номера эры
             g.DrawString(Era.ToString(), fnt, Brushes.Black, 900, 630);
         }
 
