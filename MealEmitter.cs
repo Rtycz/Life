@@ -21,6 +21,12 @@ namespace Life
             Meal = new List<Meal>();
         }
 
+        //Возвращает весь список Meal
+        public List<Meal> getMeal()
+        {
+            return (Meal);
+        }
+
         //Добавить 10 единиц еды на игровое поле
         public void Add() 
         {
@@ -67,13 +73,11 @@ namespace Life
                 int mealx = meal.getX();
                 int mealy = meal.getY();
 
-                //g.DrawLine(Pens.Blue, cellx, celly, mealx, mealy);
-
-                //double dist = Math.Sqrt(Math.Abs(Math.Pow(mealx - cellx, 2) + Math.Pow(mealy - celly, 2)));
                 double dist = Dist(cell, meal);
 
                 if ((dist < 24) && (meal.getState() == 1))
                 {
+                    cell.setHp(cell.getHp() + 20);
                     meal.setState(0);
                 }
             }
@@ -100,7 +104,34 @@ namespace Life
                     meal.setState(0);
                 }
             }
-        }           
+        }
+
+        //Находит и возвращает близжайшую к клетке CellMan еду
+        public Meal MinDistantionM(CellMan cellMan)
+        {
+            double minDist = 10000;
+            double curDist = 0;
+
+            Meal nearestMeal = Meal[0];
+
+            foreach (Meal meal in Meal)
+            {
+                if (meal.getState() != 0)
+                {
+                    curDist = Dist(cellMan, meal);
+
+                    if (minDist > curDist)
+                    {
+                        nearestMeal = meal;
+                        minDist = curDist;
+                    }
+                }
+                
+
+            }
+
+            return (nearestMeal);
+        }
 
     }
 }

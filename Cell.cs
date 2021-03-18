@@ -47,8 +47,6 @@ namespace Life
         {
             this.x += x;
             this.y += y;
-            hp--;
-            cd--;
             era++;
             
             if (this.x < -15)
@@ -82,7 +80,5 @@ namespace Life
                 hp = 100;
             }
         }
-        
-        
     }
 }

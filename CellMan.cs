@@ -27,7 +27,8 @@ namespace Life
             }
             else                            //Отрисовка Мертвой клетки клетки
             {
-                g.FillEllipse(Brushes.Black, this.getX() - getR() / 2, this.getY() - getR() / 2, this.getR(), this.getR());
+                g.DrawEllipse(Pens.Black, this.getX() - getR() / 2, this.getY() - getR() / 2, this.getR(), this.getR());
+                //g.FillEllipse(Brushes.Black, this.getX() - getR() / 2, this.getY() - getR() / 2, this.getR(), this.getR());
             }
         }
 

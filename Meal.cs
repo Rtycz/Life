@@ -14,8 +14,6 @@ namespace Life
         private int y;
         private int r = 20;
 
-        
-
         public Meal()
         {
             state = 1;
@@ -31,20 +29,12 @@ namespace Life
         public void setY(int yy) { y = yy - r / 2; }
         public void setState(int st) { state = st; }
 
-        //public void setBrush(Brush br) { brr = br; }
-
         public void Draw(Graphics g)
         {
             if (state == 1)
             {
                 Brush brr = Brushes.DarkOliveGreen;
                 g.FillEllipse(brr, x, y, r, r);
-            }
-            else
-            {
-                
-                //Brush brr = Brushes.Black;
-                //g.FillEllipse(brr, x, y, r, r);
             }
             
         }
