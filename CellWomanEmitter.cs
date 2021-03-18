@@ -44,11 +44,6 @@ namespace Life
         {
             foreach (CellWoman cell in CellWoman)
             {
-                int dirx = rand.Next(-15, 16);
-                int diry = rand.Next(-15, 16);
-
-                cell.Move(dirx, diry);
-
                 cell.Draw(g);
             }
         }

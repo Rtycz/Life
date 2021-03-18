@@ -102,6 +102,7 @@ namespace Life
         public void MoveAll()
         {
             List<CellMan> ManList = CellManEmitter.getCellList();
+            List<CellWoman> WomanList = CellWomanEmitter.getCellList();
             List<Meal> MealList = MealEmitter.getMeal();
 
             foreach (CellMan cell in ManList)
@@ -110,7 +111,7 @@ namespace Life
                 {
                     cell.setHp(cell.getHp() - 1);   //уменьшение жизней клетки
 
-                    Meal nearestMeal = MealEmitter.MinDistantionM(cell);
+                    Meal nearestMeal = MealEmitter.MinDistantion(cell);
 
                     int cellx = cell.getX();
                     int celly = cell.getY();
@@ -130,10 +131,36 @@ namespace Life
                         cell.setState(0);
 
                 }
-
-
-
             }
+
+            foreach (CellWoman cell in WomanList)
+            {
+                if (cell.getState() != 0)
+                {
+                    cell.setHp(cell.getHp() - 1);   //уменьшение жизней клетки
+
+                    Meal nearestMeal = MealEmitter.MinDistantion(cell);
+
+                    int cellx = cell.getX();
+                    int celly = cell.getY();
+                    int mealx = nearestMeal.getX();
+                    int mealy = nearestMeal.getY();
+
+                    int vectorX = Math.Sign(mealx - cellx);
+                    int vectorY = Math.Sign(mealy - celly);
+
+                    int dirx = rand.Next(-3, 16);
+                    int diry = rand.Next(-3, 16);
+
+
+                    cell.Move(dirx * vectorX, diry * vectorY);
+
+                    if (cell.getHp() < 0)           //проверка на количество жизней
+                        cell.setState(0);
+
+                }
+            }
+
         }
 
     }

@@ -77,7 +77,7 @@ namespace Life
 
                 if ((dist < 24) && (meal.getState() == 1))
                 {
-                    cell.setHp(cell.getHp() + 20);
+                    cell.Eat();
                     meal.setState(0);
                 }
             }
@@ -101,13 +101,14 @@ namespace Life
 
                 if ((dist < 24) && (meal.getState() == 1))
                 {
+                    cell.Eat();
                     meal.setState(0);
                 }
             }
         }
 
-        //Находит и возвращает близжайшую к клетке CellMan еду
-        public Meal MinDistantionM(CellMan cellMan)
+        //Находит и возвращает близжайшую к клетке cell еду
+        public Meal MinDistantion(Cell cell)
         {
             double minDist = 10000;
             double curDist = 0;
@@ -118,7 +119,7 @@ namespace Life
             {
                 if (meal.getState() != 0)
                 {
-                    curDist = Dist(cellMan, meal);
+                    curDist = Dist(cell, meal);
 
                     if (minDist > curDist)
                     {

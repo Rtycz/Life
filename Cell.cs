@@ -19,7 +19,7 @@ namespace Life
 
         public Cell()
         {
-            hp = 20;
+            hp = 30;
             cd = 0;
             era = 0;
         }

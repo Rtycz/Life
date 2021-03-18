@@ -30,6 +30,9 @@ namespace Life
                 g.DrawEllipse(Pens.Black, this.getX() - getR() / 2, this.getY() - getR() / 2, this.getR(), this.getR());
                 //g.FillEllipse(Brushes.Black, this.getX() - getR() / 2, this.getY() - getR() / 2, this.getR(), this.getR());
             }
+            //Раскомментить чтобы увидеть количество хп на клетке
+            //Font fnt = new Font("Coyrier", 20);
+            //g.DrawString(this.getHp().ToString(), fnt, Brushes.Red, this.getX() - getR() / 2, this.getY() - getR() / 2);
         }
 
         //Функция возвращает новую мужскую клетку в координате (+15, +15) от мужской клетки-родителя
