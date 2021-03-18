@@ -17,18 +17,19 @@ namespace Life
         int Age = 50;
         int Era = -1;
         
-        List<CellWoman> CellWoman = new List<CellWoman>();
+        //List<CellWoman> CellWoman = new List<CellWoman>();
 
-        MealEmitter     MealEmitter         = new   MealEmitter();
-        CellManEmitter  CellManEmitter      = new   CellManEmitter();
+        MealEmitter         MealEmitter         = new MealEmitter();
+        CellManEmitter      CellManEmitter      = new CellManEmitter();
+        CellWomanEmitter    CellWomanEmitter    = new CellWomanEmitter();
 
-        Random          rand                = new   Random();
+        Random              rand                = new Random();
 
         public Form1()
         {
             InitializeComponent();
             //CellMan.Add(new CellMan());
-            CellWoman.Add(new CellWoman());
+            //CellWoman.Add(new CellWoman());
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -43,10 +44,21 @@ namespace Life
             if (Age >= 50)
             {
                 CellManEmitter.Add(CellManEmitter.getCell(0));
+                //CellWomanEmitter.Add(CellWomanEmitter.getCell(0));
 
                 Age = 0;
 
                 MealEmitter.Add();
+            }
+
+            if (Age == 20)
+            {
+                //CellManEmitter.Add(CellManEmitter.getCell(0));
+                CellWomanEmitter.Add(CellWomanEmitter.getCell(0));
+
+                //Age = 0;
+
+                //MealEmitter.Add();
             }
 
             //Проверяется пересечение каждой из мужских клеток с едой
@@ -55,7 +67,14 @@ namespace Life
                 MealEmitter.CheckIntersectionM(cell);
             }
 
-            MealEmitter.CheckIntersectionW(CellWoman[0]);
+            //Проверяется пересечение каждой из мужских клеток с едой
+            foreach (CellWoman cell in CellWomanEmitter.getCellList())
+            {
+                MealEmitter.CheckIntersectionW(cell);
+            }
+
+
+            //MealEmitter.CheckIntersectionW(CellWoman[0]);
 
             //Отрисовка еды
             MealEmitter.Render(g);
@@ -63,12 +82,15 @@ namespace Life
             //Отрисовка мужских клеток
             CellManEmitter.Render(g);
 
-            CellWoman[0].Draw(g);
+            //Отрисовка женских клеток
+            CellWomanEmitter.Render(g);
+
+            //CellWoman[0].Draw(g);
 
             int dirx = rand.Next(-7, 8);
             int diry = rand.Next(-7, 8);
 
-            CellWoman[0].Move(dirx, diry);
+            //CellWoman[0].Move(dirx, diry);
 
             //Отрисовка эры
             g.DrawString(Era.ToString(), fnt, Brushes.Black, 900, 630);

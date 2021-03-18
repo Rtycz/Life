@@ -19,7 +19,24 @@ namespace Life
 
         public override void Draw(Graphics g)
         {
-            g.FillEllipse(Brushes.Red, this.getX() - getR() / 2, this.getY() - getR() / 2, this.getR(), this.getR());
+            if (this.getState() != 0)
+            {
+                g.FillEllipse(Brushes.Red, this.getX() - getR() / 2, this.getY() - getR() / 2, this.getR(), this.getR());
+            }
+            else
+            {
+                g.FillEllipse(Brushes.Black, this.getX() - getR() / 2, this.getY() - getR() / 2, this.getR(), this.getR());
+            }
+        }
+
+        public CellWoman AddChild()
+        {
+            CellWoman newcell = new CellWoman();
+
+            newcell.setX(this.getX() - 15);
+            newcell.setY(this.getY() - 15);
+
+            return (newcell);
         }
     }
 }
