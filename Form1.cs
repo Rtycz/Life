@@ -111,6 +111,8 @@ namespace Life
                 {
                     cell.setHp(cell.getHp() - 1);   //уменьшение жизней клетки
 
+
+
                     Meal nearestMeal = MealEmitter.MinDistantion(cell);
 
                     int cellx = cell.getX();
@@ -121,15 +123,34 @@ namespace Life
                     int vectorX = Math.Sign(mealx - cellx);
                     int vectorY = Math.Sign(mealy - celly);
 
-                    int dirx = rand.Next(-3, 16);
-                    int diry = rand.Next(-3, 16);
+                    int dirx = 0, diry = 0;
 
+                    if (cell.getHp() < 25)
+                    {
+                        dirx = rand.Next(12, 16);
+                        diry = rand.Next(12, 16);
+                    }
+                    else 
+                    {
+                        if (cell.getHp() < 50)
+                        {
+                            dirx = rand.Next(8, 12);
+                            diry = rand.Next(8, 12);
+                        }
+                        else 
+                        {
+                            if (cell.getHp() < 75)
+                            {
+                                dirx = rand.Next(4, 8);
+                                diry = rand.Next(4, 8);
+                            }
+                        }
+                    }
 
                     cell.Move(dirx * vectorX, diry * vectorY);
-
+                    
                     if (cell.getHp() < 0)           //проверка на количество жизней
                         cell.setState(0);
-
                 }
             }
 
@@ -149,8 +170,29 @@ namespace Life
                     int vectorX = Math.Sign(mealx - cellx);
                     int vectorY = Math.Sign(mealy - celly);
 
-                    int dirx = rand.Next(-3, 16);
-                    int diry = rand.Next(-3, 16);
+                    int dirx = 0, diry = 0;
+
+                    if (cell.getHp() < 25)
+                    {
+                        dirx = rand.Next(12, 16);
+                        diry = rand.Next(12, 16);
+                    }
+                    else
+                    {
+                        if (cell.getHp() < 50)
+                        {
+                            dirx = rand.Next(8, 12);
+                            diry = rand.Next(8, 12);
+                        }
+                        else
+                        {
+                            if (cell.getHp() < 75)
+                            {
+                                dirx = rand.Next(4, 8);
+                                diry = rand.Next(4, 8);
+                            }
+                        }
+                    }
 
 
                     cell.Move(dirx * vectorX, diry * vectorY);
