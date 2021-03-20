@@ -62,7 +62,7 @@ namespace Life
             return (dist);
         }
 
-        //Проверяет еду на съеденность клеткой cell, если игра съедена то ставит на нее статус 0
+        //Проверяет еду на съеденность мужской клеткой cell, если игра съедена то ставит на нее статус 0
         public void CheckIntersectionM(CellMan cell)
         {
             int x = cell.getX();
@@ -83,7 +83,7 @@ namespace Life
             }
         }
 
-        //Проверяет еду на съеденность клеткой cell, если игра съедена то ставит на нее статус 0
+        //Проверяет еду на съеденность женской клеткой cell, если игра съедена то ставит на нее статус 0
         public void CheckIntersectionW(CellWoman cell)
         {
             int x = cell.getX();
@@ -127,8 +127,6 @@ namespace Life
                         minDist = curDist;
                     }
                 }
-                
-
             }
 
             return (nearestMeal);

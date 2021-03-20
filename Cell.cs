@@ -20,7 +20,7 @@ namespace Life
         public Cell()
         {
             hp = 30;
-            cd = 0;
+            cd = 50;
             era = 0;
         }
 
@@ -79,6 +79,19 @@ namespace Life
             {
                 hp = 100;
             }
+        }
+
+        //Дистанция от текущей клетки до другой
+        public double Dist(Cell y)
+        {
+            int cellx = this.getX();
+            int celly = this.getY();
+
+            int mealx = y.getX();
+            int mealy = y.getY();
+            double dist = Math.Sqrt(Math.Pow(mealx - cellx, 2) + Math.Pow(mealy - celly, 2));
+
+            return (dist);
         }
     }
 }

@@ -28,12 +28,13 @@ namespace Life
             }
             else                            //отрисовка мертвой клетки
             {
-                g.DrawEllipse(Pens.Black, this.getX() - getR() / 2, this.getY() - getR() / 2, this.getR(), this.getR());
+                //g.DrawEllipse(Pens.Black, this.getX() - getR() / 2, this.getY() - getR() / 2, this.getR(), this.getR());
                 //g.FillEllipse(Brushes.Black, this.getX() - getR() / 2, this.getY() - getR() / 2, this.getR(), this.getR());
             }
             //Раскомментить чтобы увидеть количество хп на клетке
-            //Font fnt = new Font("Coyrier", 20);
-            //g.DrawString(this.getHp().ToString(), fnt, Brushes.Blue, this.getX() - getR() / 2, this.getY() - getR() / 2);
+            Font fnt = new Font("Coyrier", 10);
+            g.DrawString(this.getHp().ToString(), fnt, Brushes.Blue, this.getX() - 8, this.getY() - getR() / 2);
+            g.DrawString(this.getCd().ToString(), fnt, Brushes.Blue, this.getX() - 8, this.getY());
         }
 
         //Функция возвращает новую женскую клетку в координате (-15, -15) от женской клетки-родителя
@@ -45,6 +46,20 @@ namespace Life
             newcell.setY(this.getY() - 15);
 
             return (newcell);
+        }
+
+        //Возвращает дистанцию между текущей женской клеткой до мужской клетки-аргумента
+        public double DistM(CellMan cell)
+        {
+            int cell1x = this.getX();
+            int cell1y = this.getY();
+
+            int cell2x = cell.getX();
+            int cell2y = cell.getY();
+
+            double dist = Math.Sqrt(Math.Pow(cell1x - cell2x, 2) + Math.Pow(cell1y - cell2y, 2));
+
+            return (dist);
         }
     }
 }

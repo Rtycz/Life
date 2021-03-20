@@ -47,5 +47,30 @@ namespace Life
                 cell.Draw(g);
             }
         }
+
+        //Возвращает близжайшую к клетке-аргументу клетку-мужчину
+        public CellMan MinDistantion(CellWoman cell)
+        {
+            double minDist = 10000;
+            double curDist = 0;
+
+            CellMan nearestMan = CellMan[0];
+
+            foreach (CellMan cell1 in CellMan)
+            {
+                if (cell1.getState() != 0)
+                {
+                    curDist = cell1.Dist(cell);
+
+                    if (minDist > curDist)
+                    {
+                        nearestMan = cell1;
+                        minDist = curDist;
+                    }
+                }
+            }
+
+            return (nearestMan);
+        }
     }
 }

@@ -47,5 +47,30 @@ namespace Life
                 cell.Draw(g);
             }
         }
+
+        //Возвращает близжайшую к клетке-аргументу клетку-женщину
+        public CellWoman MinDistantion(CellMan cell)
+        {
+            double minDist = 10000;
+            double curDist = 0;
+
+            CellWoman nearestWoman = CellWoman[0];
+
+            foreach (CellWoman cell1 in CellWoman)
+            {
+                if (cell1.getState() != 0)
+                {
+                    curDist = cell1.Dist(cell);
+
+                    if (minDist > curDist)
+                    {
+                        nearestWoman = cell1;
+                        minDist = curDist;
+                    }
+                }
+            }
+
+            return (nearestWoman);
+        }
     }
 }
