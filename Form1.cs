@@ -97,7 +97,7 @@ namespace Life {
                     cell.setHp(cell.getHp() - 1);   //уменьшение жизней клетки
                     cell.setCd(cell.getCd() - 1);   //Уменьшение перезарядки размножения
 
-                    if (cell.getHp() < 0)           //проверка на количество жизней
+                    if (cell.getHp() < 0)          //проверка на количество жизней
                         cell.setState(0);
 
                     Meal nearestMeal = MealEmitter.MinDistantion(cell);     //Ищется близжайшая к клетке еда
@@ -146,7 +146,7 @@ namespace Life {
                     cell.setHp(cell.getHp() - 1);   //уменьшение жизней клетки
                     cell.setCd(cell.getCd() - 1);
 
-                    if (cell.getHp() < 0)           //проверка на количество жизней
+                    if (cell.getHp() < 0)          //проверка на количество жизней
                         cell.setState(0);
 
                     Meal nearestMeal = MealEmitter.MinDistantion(cell);
@@ -334,7 +334,7 @@ namespace Life {
                     cell.Move(dirx * vectorX, diry * vectorY);
 
 
-                    if (cell.getHp() < 0)           //проверка на количество жизней
+                    if ((cell.getHp() < 0) || (cell.getEra() >= 500))           //проверка на количество жизней
                         cell.setState(0);
                 }
             }
@@ -382,7 +382,7 @@ namespace Life {
                     //g.DrawLine(Pens.Green, cell.getX(), cell.getY(), vectorX, vectorY);
                     cell.Move(dirx * vectorX, diry * vectorY);
 
-                    if (cell.getHp() < 0)           //проверка на количество жизней
+                    if ((cell.getHp() < 0) || (cell.getEra() >= 500))           //проверка на количество жизней
                         cell.setState(0);
                 }
             }

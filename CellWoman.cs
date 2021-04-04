@@ -35,6 +35,7 @@ namespace Life
             Font fnt = new Font("Coyrier", 10);
             g.DrawString(this.getHp().ToString(), fnt, Brushes.Blue, this.getX() - 8, this.getY() - getR() / 2);
             g.DrawString(this.getCd().ToString(), fnt, Brushes.Blue, this.getX() - 8, this.getY());
+            g.DrawString(this.getEra().ToString(), fnt, Brushes.Orange, this.getX() - 8, this.getY() - getR());
         }
 
         //Функция возвращает новую женскую клетку в координате (-15, -15) от женской клетки-родителя
