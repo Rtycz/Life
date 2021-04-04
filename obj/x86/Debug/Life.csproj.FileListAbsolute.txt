@@ -8,3 +8,23 @@ C:\Developing\C Sharp\Life\obj\x86\Debug\Life.csproj.CoreCompileInputs.cache
 C:\Developing\C Sharp\Life\obj\x86\Debug\Life.exe
 C:\Developing\C Sharp\Life\obj\x86\Debug\Life.pdb
 C:\Developing\C Sharp\Life\obj\x86\Debug\Life.csprojAssemblyReference.cache
+C:\Users\Alexey\Desktop\4_course\8_semest\C#\LifeAV\Life\bin\x86\Debug\Life.exe.config
+C:\Users\Alexey\Desktop\4_course\8_semest\C#\LifeAV\Life\bin\x86\Debug\Life.exe
+C:\Users\Alexey\Desktop\4_course\8_semest\C#\LifeAV\Life\bin\x86\Debug\Life.pdb
+C:\Users\Alexey\Desktop\4_course\8_semest\C#\LifeAV\Life\obj\x86\Debug\Life.csprojAssemblyReference.cache
+C:\Users\Alexey\Desktop\4_course\8_semest\C#\LifeAV\Life\obj\x86\Debug\Life.Form1.resources
+C:\Users\Alexey\Desktop\4_course\8_semest\C#\LifeAV\Life\obj\x86\Debug\Life.Properties.Resources.resources
+C:\Users\Alexey\Desktop\4_course\8_semest\C#\LifeAV\Life\obj\x86\Debug\Life.csproj.GenerateResource.cache
+C:\Users\Alexey\Desktop\4_course\8_semest\C#\LifeAV\Life\obj\x86\Debug\Life.csproj.CoreCompileInputs.cache
+C:\Users\Alexey\Desktop\4_course\8_semest\C#\LifeAV\Life\obj\x86\Debug\Life.exe
+C:\Users\Alexey\Desktop\4_course\8_semest\C#\LifeAV\Life\obj\x86\Debug\Life.pdb
+C:\Users\Alexey\Desktop\4_course\8_semest\C#\Life\bin\x86\Debug\Life.exe.config
+C:\Users\Alexey\Desktop\4_course\8_semest\C#\Life\bin\x86\Debug\Life.exe
+C:\Users\Alexey\Desktop\4_course\8_semest\C#\Life\bin\x86\Debug\Life.pdb
+C:\Users\Alexey\Desktop\4_course\8_semest\C#\Life\obj\x86\Debug\Life.csprojAssemblyReference.cache
+C:\Users\Alexey\Desktop\4_course\8_semest\C#\Life\obj\x86\Debug\Life.Form1.resources
+C:\Users\Alexey\Desktop\4_course\8_semest\C#\Life\obj\x86\Debug\Life.Properties.Resources.resources
+C:\Users\Alexey\Desktop\4_course\8_semest\C#\Life\obj\x86\Debug\Life.csproj.GenerateResource.cache
+C:\Users\Alexey\Desktop\4_course\8_semest\C#\Life\obj\x86\Debug\Life.csproj.CoreCompileInputs.cache
+C:\Users\Alexey\Desktop\4_course\8_semest\C#\Life\obj\x86\Debug\Life.exe
+C:\Users\Alexey\Desktop\4_course\8_semest\C#\Life\obj\x86\Debug\Life.pdb
